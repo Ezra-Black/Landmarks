@@ -6,11 +6,15 @@
 //
 
 import Foundation
+import Combine
+
+final class ModelData: ObservableObject {
+    @Published var landmarks: [Landmark] = load("landmarkData.json")
+}
 
 //a load(_:) method that fetches JSON data with a given name from the app’s main bundle.
 //The load method relies on the return type’s conformance to the Codable protocol.
 
-var landmarks: [Landmark] = load("landmarkData.json")
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
