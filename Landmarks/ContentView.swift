@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Main: View {
+struct ContentView: View {
     @State private var selection: Tab = .featured
     
     enum Tab {
@@ -34,7 +34,7 @@ struct Main: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        Main()
+        ContentView()
             .environmentObject(ModelData())
     }
 }
